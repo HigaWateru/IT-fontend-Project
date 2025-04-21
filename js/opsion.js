@@ -12,22 +12,6 @@ document.querySelectorAll('.color-item').forEach(item => {
     });
 });
 
-let checkBoxList = document.getElementById('done-2')
-let checkBoxModal = document.getElementById('done-modal-2')
-checkBoxList.addEventListener('change', function(){
-    checkBoxModal.checked = this.checked
-})
-checkBoxModal.addEventListener('change', function(){
-    checkBoxList.checked = this.checked
-})
-
-function openModalinModal(modal1, modal2){
-    let firstModal = document.getElementById(modal1)
-    let secondModal = new bootstrap.Modal(document.getElementById(modal2))
-    firstModal.addEventListener('hidden.bs.modal', function(){
-        secondModal.show()
-    })
-}
 
 document.addEventListener("DOMContentLoaded", function () {
     const checkboxStartdate = document.getElementById("allowStartdate")

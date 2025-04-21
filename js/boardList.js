@@ -14,11 +14,10 @@ if(starred){
     })
 }
 
-console.log(boardList.title)
 let closedBoards = JSON.parse(localStorage.getItem('closedBoards')) || []
 
 function loadBoardPage(){
-    console.log(boardList)
+    // console.log(boardList)
 
     let headingTitle = document.getElementById("headingTitle")
     headingTitle.innerText = boardList.title
@@ -28,6 +27,9 @@ function loadBoardPage(){
 
     let bodyList = document.getElementById("bodyList")
     bodyList.innerHTML = ""
+
+
+    
     
     boardList.lists.forEach(list => {
         bodyList.innerHTML += `
@@ -158,7 +160,6 @@ function createBoard() {
         create_at: new Date().toISOString(),
         lists: []
     }
-    console.log(newBoard)
 
     const modalElement = document.getElementById("staticBackdrop")
     const modalInstance = bootstrap.Modal.getInstance(modalElement)
@@ -487,7 +488,6 @@ document.getElementById("modalDescriptionCard").addEventListener("show.bs.modal"
     let taskIndex = boardList.lists[listIndex].tasks.findIndex(task => task.id === Number(taskID))
     if (taskIndex !== -1) {
         let task = boardList.lists[listIndex].tasks[taskIndex]
-        console.log(task)
         let modalDescriptionTitle = document.getElementById("modalDescriptionTitle")
         let modalDescriptionContent = document.getElementById("modalDescriptionContent")
         modalDescriptionTitle.innerText = task.title
@@ -597,7 +597,6 @@ document.getElementById("moveCard").addEventListener("show.bs.modal", function (
     let taskList = document.getElementById("taskListOpt")
     taskList.innerHTML = ""
     boardList.lists.forEach(list => {
-        console.log(list.title)
         taskList.innerHTML += `
             <option value="${list.id}">${list.title}</option>
         `
@@ -746,7 +745,6 @@ function renderFilteredTasks(filterTask){
 function renderLabel(){
     let labelCreated = JSON.parse(localStorage.getItem("labelCreated")) || []
     let labelList = document.getElementById("labelColorList")
-    console.log(labelCreated)
     if(labelCreated.length == 0){
         labelList.parentElement.style.display = "none"
         return
@@ -778,3 +776,5 @@ function nextPage(boardID) {
     localStorage.setItem("boardID", boardID)
     window.location.href = "boardList.html"
 }
+
+// Test github

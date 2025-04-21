@@ -14,7 +14,6 @@ body{
 }
 .your-boards .header svg{
     font-weight: bold;
-    cursor: pointer;
 }
 .your-boards .boards-list{
     gap: 15px;

@@ -87,7 +87,6 @@ function createBoard() {
         create_at: new Date().toISOString(),
         lists: []
     }
-    console.log(newBoard)
 
     const modalElement = document.getElementById("createBoard")
     const modalInstance = bootstrap.Modal.getInstance(modalElement)
@@ -118,7 +117,6 @@ document.addEventListener("click", function (event) {
         document.getElementById("board_title").value = board.title
         selectedBackground = board.background
         selectedColor = board.color
-        console.log(selectedBackground, selectedColor)
         localStorage.setItem("boardID", board.id)
 
         document.querySelectorAll(".background-option img").forEach(opt => {
